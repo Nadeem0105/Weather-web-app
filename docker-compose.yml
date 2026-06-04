@@ -3,6 +3,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_OPENWEATHERMAP_API_KEY=${NEXT_PUBLIC_OPENWEATHERMAP_API_KEY}
+        - NEXT_PUBLIC_OPENWEATHERMAP_BASE_URL=${NEXT_PUBLIC_OPENWEATHERMAP_BASE_URL}
     container_name: weather-web-app
     ports:
       - 3000:3000 # map host port with container port

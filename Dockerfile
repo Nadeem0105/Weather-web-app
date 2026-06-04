@@ -13,6 +13,14 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
+# Define build arguments needed for Next.js build-time variables
+ARG NEXT_PUBLIC_OPENWEATHERMAP_API_KEY
+ARG NEXT_PUBLIC_OPENWEATHERMAP_BASE_URL
+
+# Expose them as environment variables during build
+ENV NEXT_PUBLIC_OPENWEATHERMAP_API_KEY=$NEXT_PUBLIC_OPENWEATHERMAP_API_KEY
+ENV NEXT_PUBLIC_OPENWEATHERMAP_BASE_URL=$NEXT_PUBLIC_OPENWEATHERMAP_BASE_URL
+
 # Build the app
 RUN npm run build
 
