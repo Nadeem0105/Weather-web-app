@@ -1,9 +1,9 @@
 services:
-  Weather-web-app:
+  weather-web-app:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: Weather-web-app
+    container_name: weather-web-app
     ports:
       - 3000:3000 # map host port with container port
     restart: "unless-stopped"
