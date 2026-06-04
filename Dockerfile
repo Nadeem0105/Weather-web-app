@@ -8,7 +8,7 @@ WORKDIR /Weather-web-app
 COPY package*.json ./
 
 # Install dependencies using npm (fast and clean install from package-lock.json)
-RUN npm ci
+RUN npm install
 
 # Copy the rest of the application code
 COPY . .
